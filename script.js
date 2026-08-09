@@ -1,30 +1,69 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("myModal");
+    const closeBtn = document.querySelector(".close");
+    const modalDesc = document.getElementById("modal-desc");
+    const modalContent = document.querySelector(".modal-content");
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Get modal elements
-    var modal = document.getElementById("myModal");
-    var modalImg = document.getElementById("modal-img");
-    var modalDesc = document.getElementById("modal-desc");
-    var closeBtn = document.getElementsByClassName("close")[0];
+    // 1. CLICK HANDLER FOR IMAGES
+    document.querySelectorAll(".clickable-img").forEach(img => {
+        img.addEventListener("click", function () {
+            removeExistingMedia();
 
-    // Get all clickable images
-    var images = document.getElementsByClassName("clickable-img");
+            const newImg = document.createElement("img");
+            newImg.id = "modal-img";
+            newImg.src = this.src;
+            newImg.alt = this.alt;
 
-    for (var i = 0; i < images.length; i++) {
-    images[i].onclick = function() {
-        modal.style.display = "flex";
-        modalImg.src = this.src;
-        modalDesc.innerHTML = this.getAttribute("data-desc");
-    }
-}
+            modalContent.insertBefore(newImg, modalDesc);
+            modalDesc.textContent = this.getAttribute("data-desc") || "";
+            modal.style.display = "flex";
+        });
+    });
 
-// Close modal when clicking X or outside
-closeBtn.onclick = function() {
-    modal.style.display = "none";
-}
+    // 2. CLICK HANDLER FOR VIDEOS
+    document.querySelectorAll(".clickable-vid").forEach(vidContainer => {
+        vidContainer.addEventListener("click", function () {
+            removeExistingMedia();
 
-window.onclick = function(event) {
-    if (event.target == modal) {
+            const videoPath = this.getAttribute("data-video");
+            const newVideo = document.createElement("video");
+            newVideo.id = "modal-video";
+            newVideo.src = videoPath;
+            newVideo.controls = true;
+            newVideo.autoplay = true;
+
+            modalContent.insertBefore(newVideo, modalDesc);
+            modalDesc.textContent = this.getAttribute("data-desc") || "";
+            modal.style.display = "flex";
+        });
+    });
+
+    // 3. CLOSE MODAL LOGIC
+    function closeModal() {
         modal.style.display = "none";
+        removeExistingMedia();
     }
-}
+
+    closeBtn.addEventListener("click", closeModal);
+
+    window.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // 4. HELPER TO REMOVE MEDIA WHEN CLOSING OR SWITCHING
+    function removeExistingMedia() {
+        const existingImg = document.getElementById("modal-img");
+        const existingVid = document.getElementById("modal-video");
+
+        if (existingImg) {
+            existingImg.remove();
+        }
+        
+        if (existingVid) {
+            existingVid.pause();
+            existingVid.remove();
+        }
+    }
 });

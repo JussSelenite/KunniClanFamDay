@@ -316,3 +316,70 @@ footer p {
     margin: 0 auto;
     border-radius: 8px; /* Optional: rounds the banner corners slightly */
 }
+
+/* =========================
+   AUTO-THUMBNAIL VIDEO STYLING
+========================= */
+
+.video-container {
+    position: relative;
+    cursor: pointer;
+    margin-top: 8px;
+    display: block;
+    width: 100%;
+    border: 3px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(2, 96, 82, 0.12);
+}
+
+.video-container:hover {
+    transform: scale(1.03);
+    border-color: var(--accent-coral);
+    box-shadow: 0 8px 16px rgba(224, 122, 95, 0.25);
+}
+
+/* Style the auto-thumbnail video element to act like a photo */
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none; /* Disables right-click and controls on thumbnail */
+    object-fit: cover;
+}
+
+/* Play Button Circle & Triangle */
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(2, 96, 82, 0.85);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding-left: 4px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.video-container:hover .play-icon {
+    transform: translate(-50%, -50%) scale(1.15);
+    background-color: var(--accent-coral);
+}
+
+/* Modal Video Styling */
+.modal-content video {
+    width: 100%;
+    max-height: 65vh;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    outline: none;
+}

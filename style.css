@@ -1,19 +1,6 @@
-/* CUSTOM FONTS */
-@font-face {
-    font-family: 'Kids Magazine';
-    src: local('Kids Magazine'),
-         url('./font/Kids_Magazine.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Doctor Soos';
-    src: local('Doctor Soos'),
-         url('/font/Doctor_Soos_Light_1.1.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+/* =========================
+   COLOR PALETTE & FONTS
+========================= */
 
 * {
     box-sizing: border-box;
@@ -31,12 +18,14 @@
     --accent-amber: #f4a261;     /* Amber Text Shadow */
     --border-color: #a3c6c0;     /* Muted Sage Border */
     
-    /* Fonts */
-    --font-heading: 'Kids Magazine', 'Trebuchet MS', sans-serif;
-    --font-body: 'Doctor Soos', 'Courier New', cursive, sans-serif;
+    /* Clean, Web-Safe System Fonts (Comic Sans strictly forbidden) */
+    --font-heading: 'Trebuchet MS', 'Arial Rounded MT Bold', 'Arial Black', sans-serif;
+    --font-body: 'Verdana', 'Segoe UI', Tahoma, sans-serif;
 }
 
-/* BODY & TYPOGRAPHY */
+/* =========================
+   BODY & TYPOGRAPHY
+========================= */
 
 body {
     margin: 2%;
@@ -50,11 +39,12 @@ body {
 h1 {
     font-family: var(--font-heading);
     color: var(--main-color);
+    font-weight: 800;
     letter-spacing: 1px;
 }
 
 h2, h3, h4, h5, h6 {
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
     color: var(--main-color);
 }
 
@@ -64,6 +54,7 @@ h2 {
 }
 
 h5 {
+    font-family: var(--font-body);
     font-size: 1.2rem;
     color: var(--accent-coral);
     margin-top: 0;
@@ -85,14 +76,16 @@ hr {
     color: var(--main-color);
 }
 
-/* SUPER HEADER GROUP */
+/* =========================
+   SUPER HEADER GROUP
+========================= */
 
 .super-header-group {
     background-color: #e4f0ed;
     padding: 24px 16px;
     border-radius: 16px;
     border: 2px dashed var(--main-color);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .super-header-group h1 {
@@ -100,7 +93,9 @@ hr {
     text-shadow: 1px 1px 0px var(--accent-amber);
 }
 
-/* GALLERY LAYOUT*/
+/* =========================
+   GALLERY LAYOUT
+========================= */
 
 .row {
     display: flex;
@@ -137,7 +132,9 @@ hr {
     transform: scale(0.98);
 }
 
-/* MODAL*/
+/* =========================
+   MODAL
+========================= */
 
 .modal {
     display: none;
@@ -205,7 +202,9 @@ hr {
     }
 }
 
-/*FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     text-align: center;
@@ -246,7 +245,9 @@ footer p {
     font-size: 1rem;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media screen and (max-width: 800px) {
     .column {

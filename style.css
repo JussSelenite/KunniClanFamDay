@@ -10,7 +10,7 @@
 @font-face {
     font-family: 'Doctor Soos';
     src: local('Doctor Soos'),
-         url('./font/Doctor_Soos_Light_1.1.ttf') format('truetype');
+         url('/font/Doctor_Soos_Light_1.1.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

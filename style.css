@@ -340,6 +340,10 @@ footer p {
     box-shadow: 0 8px 16px rgba(224, 122, 95, 0.25);
 }
 
+.video-container * {
+  pointer-events: none;
+}
+
 /* Style the auto-thumbnail video element to act like a photo */
 .video-container video {
     width: 100%;

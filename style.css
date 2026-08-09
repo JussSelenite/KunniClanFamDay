@@ -309,7 +309,8 @@ footer p {
 
 .section-banner {
     max-width: 100%;
-    height: 50%;
+    max-height: 250px;
+    height: auto;
     display: block;
     margin: 0 auto;
     border-radius: 8px; /* Optional: rounds the banner corners slightly */

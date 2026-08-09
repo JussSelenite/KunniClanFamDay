@@ -1,14 +1,16 @@
 /* CUSTOM FONTS */
 @font-face {
     font-family: 'Kids Magazine';
-    src: url('font/Kids_Magazine.ttf') format('truetype');
+    src: local('Kids Magazine'),
+         url('./font/Kids_Magazine.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Doctor Soos';
-    src: url('font/Doctor_Soos_Light_1.1.ttf') format('truetype');
+    src: local('Doctor Soos'),
+         url('./font/Doctor_Soos_Light_1.1.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             newImg.alt = this.alt;
 
             modalContent.insertBefore(newImg, modalDesc);
-            modalDesc.textContent = this.getAttribute("data-desc") || "";
+            modalDesc.innerHTML = this.getAttribute("data-desc") || "";
             modal.style.display = "flex";
         });
     });
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
             newVideo.autoplay = true;
 
             modalContent.insertBefore(newVideo, modalDesc);
-            modalDesc.textContent = this.getAttribute("data-desc") || "";
+            modalDesc.innerHTML = this.getAttribute("data-desc") || "";
             modal.style.display = "flex";
         });
     });

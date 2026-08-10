@@ -1,3 +1,18 @@
+/*Font declarations*/
+@font-face {
+    font-family: 'Kids Magazine';
+    src: url('font/Kids_Magazine.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Doctor Soos';
+    src: url('font/Doctor_Soos_Light_1.1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Color Palette & Fonts */
 * {
     box-sizing: border-box;
@@ -12,8 +27,8 @@
     --footer-bg: #dbebe7;        /* Soft Teal Footer */
     --border-color: #a3c6c0;     /* Muted Sage Border */
     
-    --font-heading: 'Trebuchet MS', 'Arial Rounded MT Bold', 'Arial Black', sans-serif;
-    --font-body: 'Verdana', 'Segoe UI', Tahoma, sans-serif;
+    --font-heading: 'Kids Magazine', 'Trebuchet MS', 'Arial Rounded MT Bold', 'Arial Black', sans-serif;
+    --font-body: 'Doctor Soos', 'Verdana', 'Segoe UI', Tahoma, sans-serif;
 }
 
 /* Typography & Page */
@@ -73,7 +88,7 @@ hr {
 }
 
 .super-header-group h1 {
-    text-shadow: 1px 1px 0px var(--accent-amber);
+    text-shadow: 1px 1px 0px var(--subtitle-color);
 }
 
 .section-banner {
@@ -117,7 +132,7 @@ hr {
 .column img:hover, 
 .video-container:hover {
     transform: scale(1.03);
-    border-color: var(--accent-coral);
+    border-color: var(--subtitle-color);
     box-shadow: 0 8px 16px rgba(224, 122, 95, 0.25);
 }
 
@@ -164,7 +179,7 @@ hr {
 
 .video-container:hover .play-icon {
     transform: translate(-50%, -50%) scale(1.15);
-    background-color: var(--accent-coral);
+    background-color: var(--subtitle-color);
 }
 
 /* Modal Popup */

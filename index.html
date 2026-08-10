@@ -1,614 +1,299 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Kunni Clan Event Gallery</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" type="image/jpeg" href="img/icon.jpg">
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js" defer></script>
-
-        <meta property="og:title" content="Kunni Clan Event Gallery">
-        <meta property="og:description" content="Fill up this website full of memorable pictures of our family!">
-        <meta property="og:image" content="https://jussselenite.github.io/KunniClanFamDay/img/logo/for%20diana-02.png">
-        <meta property="og:url" content="https://jussselenite.github.io/KunniClanFamDay/">
-        <meta property="og:type" content="website">
-
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Kunni Clan Event Gallery">
-        <meta name="twitter:description" content="Fill up this website full of memorable pictures of our family!">
-        <meta name="twitter:image" content="https://jussselenite.github.io/KunniClanFamDay/img/logo/for%20diana-02.png">
-    </head>
-    <body>
-        <div class="header">
-            <h1>KUNNI CLAN EVENT GALLERY</h1>
-            <h5><i>Fill up this website full of memorable pictures of our family! Contact Diana for adding the pics :></i></h5>
-            <hr>
-        </div>
-
-        <!-- SUPER HEADER: FAMILY DAY 2026 -->
-        <section class="super-header-group">
-            <div class="center-content">
-                <img src="img/logo/for diana-02.png" alt="Family Day 2026 Banner" class="section-banner">            
-            </div>
-            
-            <br>
-
-            <h2>31ST JULY 2026</h2>
-            <h5><i>1st Day</i></h5>
-            
-            <div class="row">
-                <div class="column">
-                    <img src="img/3107/3107001.jpeg" class="clickable-img" title="ELShape" alt="1stday" data-desc="Pintu masuk villa Family Day">
-                    <img src="img/3107/3107006.jpeg" class="clickable-img" title="Mamajue and Papazul" alt="1stday" data-desc="Senyum letihhhh">
-                    <div class="video-container clickable-vid" data-video="img/3107/3107010v.mp4" data-desc="Showcasing swimming pool">
-                        <video src="img/3107/3107010v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Password Protected Page</title>
+    <style>
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #dialogText {
+            color: white;
+            background-color: #333333;
+        }
+        
+        #dialogWrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: table;
+            background-color: #EEEEEE;
+        }
+        
+        #dialogWrapCell {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        #mainDialog {
+            max-width: 400px;
+            margin: 5px;
+            border: solid #AAAAAA 1px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px 3px #AAAAAA;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #FFFFFF;
+            overflow: hidden;
+            text-align: left;
+        }
+        #mainDialog > * {
+            padding: 10px 30px;
+        }
+        #passArea {
+            padding: 20px 30px;
+            background-color: white;
+        }
+        #passArea > * {
+            margin: 5px auto;
+        }
+        #pass {
+            width: 100%;
+            height: 40px;
+            font-size: 30px;
+        }
+        
+        #messageWrapper {
+            float: left;
+            vertical-align: middle;
+            line-height: 30px;
+        }
+        
+        .notifyText {
+            display: none;
+        }
+        
+        #invalidPass {
+            color: red;
+        }
+        
+        #success {
+            color: green;
+        }
+        
+        #submitPass {
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: #E7E7E7;
+            border: solid gray 1px;
+            float: right;
+            cursor: pointer;
+        }
+        #contentFrame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #attribution {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        #attribution, #attribution a {
+            color: #999;
+        }
+        .error {
+            display: none;
+            color: red;
+        }
+    </style>
+  </head>
+  <body>
+    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
+    <div id="dialogWrap">
+        <div id="dialogWrapCell">
+            <div id="mainDialog">
+                <div id="dialogText">This page is password protected.</div>
+                <div id="passArea">
+                    <p id="passwordPrompt">Password</p>
+                    <input id="pass" type="password" name="pass" autofocus>
+                    <div>
+                        <span id="messageWrapper">
+                            <span id="invalidPass" class="error">Sorry, please try again.</span>
+                            <span id="trycatcherror" class="error">Sorry, something went wrong.</span>
+                            <span id="success" class="notifyText">Success!</span>
+                            &nbsp;
+                        </span>
+                        <button id="submitPass" type="button">Submit</button>
+                        <div style="clear: both;"></div>
                     </div>
-                    <img src="img/3107/3107008.jpeg" class="clickable-img" title="Hadiah display" alt="1stday" data-desc="Hadiah semua sudah tersusun di sini">
-
                 </div>
-                <div class="column">
-                    <img src="img/3107/3107002.jpeg" class="clickable-img" title="Breakfast!!" alt="1stday" data-desc="Breakfast by Melah Catering">
-                    <img src="img/3107/3107004.jpeg" class="clickable-img" title="Ummi selfie" alt="1stday" data-desc="Breakfast in dining hall">
-                    <div class="video-container clickable-vid" data-video="img/3107/3107011v.mp4" data-desc="The main villa">
-                        <video src="img/3107/3107011v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <img src="img/3107/3107009.jpeg" class="clickable-img" title="Panoramaa" alt="1stday" data-desc="Besa betul umah nih">
+                <div id="securecontext" class="error">
+                    <p>
+                        Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
+                    </p>
                 </div>
-                <div class="column">
-                    <img src="img/3107/3107003.jpeg" class="clickable-img" title="Breakfast!!" alt="1stday" data-desc="Breakfast by Melah Catering">
-                    <img src="img/3107/3107005.jpeg" class="clickable-img" title="Swimming pool" alt="1stday" data-desc="Swimming pool di ELShape">
-                    <div class="video-container clickable-vid" data-video="img/3107/3107013v.mp4" data-desc="The living room in other villa">
-                        <video src="img/3107/3107013v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-
-                </div>  
-                <div class="column">
-                    <div class="video-container clickable-vid" data-video="img/3107/3107012v.mp4" data-desc="Breakfast at display">
-                        <video src="img/3107/3107012v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <img src="img/3107/3107007.jpeg" class="clickable-img" title="Swimming pool" alt="1stday" data-desc="Swimming pool di ELShape!!">
-                    <div class="video-container clickable-vid" data-video="img/3107/3107014v.mp4" data-desc="View of the other villa from balcony">
-                        <video src="img/3107/3107014v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
+                <div id="nocrypto" class="error">
+                    <p>
+                        Your web browser appears to be outdated. Please visit this page using a modern browser.
+                    </p>
                 </div>
-            </div>
-
-            <hr>
-
-            <h2>1ST AUGUST 2026</h2>
-            <h5><i>2nd Day</i></h5>
-            
-            <h2>1ST AUGUST 2026</h2>
-            <h5><i>2nd Day</i></h5>
-            
-            <div class="row">
-                <div class="column">
-                    <div class="video-container clickable-vid" data-video="img/0108/0108099v.mp4" data-desc="Ni je sempat terakam sebelum camera off 🤣">
-                        <video src="img/0108/0108099v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-			
-                    <img src="img/0108/0108138.jpeg" class="clickable-img" title="Morning food" alt="2ndDay" data-desc="Makanan menawan">
-                    <img src="img/0108/0108140.jpeg" class="clickable-img" title="Morning food" alt="2ndDay" data-desc="Toaster and the gang">
-                    <div class="video-container clickable-vid" data-video="img/0108/0108139v.mp4" data-desc="'Makanan dah sampai ya kak'">
-                        <video src="img/0108/0108139v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-			        <img src="img/0108/0108003.jpeg" class="clickable-img" title="Memakan" alt="2ndDay" data-desc="Penampakan 2 anak buah bersama Uncle Iyeh makan bersama">
-                    <img src="img/0108/0108009.jpeg" class="clickable-img" title="Memakan" alt="2ndDay" data-desc="Smileeee">
-                    <img src="img/0108/0108007.jpeg" class="clickable-img" title="Breakfast awal lu" alt="2ndDay" data-desc="Breakfast tepi pool, sebab tiada pantai">
-                    <img src="img/0108/0108001.jpeg" class="clickable-img" title="Living Room" alt="2ndDay" data-desc="Cantik betul umah nih">
-                    <img src="img/0108/0108005.jpeg" class="clickable-img" title="Enjoying Breakky" alt="2ndDay" data-desc="Smile!!">
-                    <img src="img/0108/0108018.jpeg" class="clickable-img" title="Enjoying Breakky" alt="2ndDay" data-desc="Aunty Juejue ate before Zumba">
-                    <img src="img/0108/0108039.jpeg" class="clickable-img" title="Lily Pose!" alt="2ndDay" data-desc="Lily berzumbaa">
-                    <img src="img/0108/0108040.jpeg" class="clickable-img" title="Lily Pose!" alt="2ndDay" data-desc="Lily berzumbaa">
-                    <img src="img/0108/0108038.jpeg" class="clickable-img" title="Lily Pose!" alt="2ndDay" data-desc="Lily berzumbaa">
-                    <img src="img/0108/0108013.jpeg" class="clickable-img" title="Cempedak & 2nd breakfast" alt="2ndDay" data-desc="Papazul handles cempedak">
-                    <img src="img/0108/0108019.jpeg" class="clickable-img" title="Cempedak & 2nd breakfast" alt="2ndDay" data-desc="4 anak dara kurang bersedia tapi berseri gak">
-		            <img src="img/0108/0108012.jpeg" class="clickable-img" title="Cempedak & 2nd breakfast" alt="2ndDay" data-desc="5 anak dara kelihatan jelita">
-                    <img src="img/0108/0108002.jpeg" class="clickable-img" title="Breakfast!!" alt="2ndDay" data-desc="Makanan menyelerakan!">
-                    <img src="img/0108/0108006.jpeg" class="clickable-img" title="Memakan" alt="2ndDay" data-desc="Mamajue menyuap cucunya">
-                    <img src="img/0108/0108017.jpeg" class="clickable-img" title="Memakan" alt="2ndDay" data-desc="✌️">
-                    <img src="img/0108/0108014.jpeg" class="clickable-img" title="Cempedak & 2nd breakfast" alt="2ndDay" data-desc="papazul tackles cempedak">
-                    <img src="img/0108/0108004.jpeg" class="clickable-img" title="Memakan" alt="2ndDay" data-desc="Ikraam and Uncle Iyeh enjoying breakfast">
-                    <img src="img/0108/0108008.jpeg" class="clickable-img" title="Memakan" alt="2ndDay" data-desc="Alesha enjoys hash brown">
-                    <img src="img/0108/0108016.jpeg" class="clickable-img" title="Cempedak & 2nd breakfast" alt="2ndDay" data-desc="Cempedak from pokok from Langat!!! Lazattt">
-                    <img src="img/0108/0108015.jpeg" class="clickable-img" title="Cempedak & 2nd breakfast" alt="2ndDay" data-desc="Ikraam posing in breakfast (cehwah)">  
-
-                </div>
-                <div class="column">
-			        <img src="img/0108/0108022.jpeg" class="clickable-img" title="Morning Activities" alt="2ndDay" data-desc="Hadiah menawan sedang tersusun">
-                    <img src="img/0108/0108041.jpeg" class="clickable-img" title="Morning Activities" alt="2ndDay" data-desc="Anak-anak muda sambung menikmati mandi kolam">
-                    <div class="video-container clickable-vid" data-video="img/0108/0108118v.mp4" data-desc="Lompat tinggi-tinggi!">
-                        <video src="img/0108/0108118v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-		            <div class="video-container clickable-vid" data-video="img/0108/0108107v.mp4" data-desc="Culin dah prektissssss lagu malam niiii">
-                        <video src="img/0108/0108107v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-
-                    <img src="img/0108/0108023.jpeg" class="clickable-img" title="Morning Activities" alt="2ndDay" data-desc="Uncle & Aunty berehat">
-                    <img src="img/0108/0108033.jpeg" class="clickable-img" title="Morning Activities" alt="2ndDay" data-desc="Abang Long memantau anak-anak">
-                    <img src="img/0108/0108054.jpeg" class="clickable-img" title="Morning Activities" alt="2ndDay" data-desc="Anak-anak muda sambung menikmati mandi kolam">
-                    <img src="img/0108/0108011.jpeg" class="clickable-img" title="Morning Activities" alt="2ndDay" data-desc="Mamajue nak siap susunkan hadiah!">
-                    <img src="img/0108/0108020.jpeg" class="clickable-img" title="Morning Activities" alt="2ndDay" data-desc="Mamajue susunkan gifts for exchange">
-                    <img src="img/0108/0108031.jpeg" class="clickable-img" title="Morning Activities" alt="2ndDay" data-desc="Main kolammm">
-                    <img src="img/0108/0108042.jpeg" class="clickable-img" title="Morning Activities" alt="2ndDay" data-desc="Anak-anak muda sambung menikmati mandi kolam">
-		            <img src="img/0108/0108021.jpeg" class="clickable-img" title="Morning Activities" alt="2ndDay" data-desc="Uncle & Aunty berehat">
-                    <img src="img/0108/0108032.jpeg" class="clickable-img" title="Morning Activities" alt="2ndDay" data-desc="Main bola di kolamm">
-                    <img src="img/0108/0108044.jpeg" class="clickable-img" title="Morning Activities" alt="2ndDay" data-desc="Anak-anak muda sambung menikmati mandi kolam">
-                    
-                    <div class="video-container clickable-vid" data-video="img/0108/0108137v.mp4" data-desc="Wow Ikraam nyanyiiiiii">
-                        <video src="img/0108/0108137v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-		            <div class="video-container clickable-vid" data-video="img/0108/0108108v.mp4" data-desc="Uncle Iyeh prektis karok bersama">
-                        <video src="img/0108/0108108v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>    
-
-                </div>  
-                <div class="column">
-                    <img src="img/0108/0108043.jpeg" class="clickable-img" title="Evening Activities" alt="2ndDay" data-desc="Four-cousin carrom standoff">
-                    <img src="img/0108/0108028.jpeg" class="clickable-img" title="Evening Activities" alt="2ndDay" data-desc="Nervous ke tu kena cucuk?">
-                    <img src="img/0108/0108024.jpeg" class="clickable-img" title="Evening Activities" alt="2ndDay" data-desc="ada gayaaa">
-                    <img src="img/0108/0108037.jpeg" class="clickable-img" title="Evening Activities" alt="2ndDay" data-desc="Youngest dam haji champion">
-                    <img src="img/0108/0108027.jpeg" class="clickable-img" title="Evening Activities" alt="2ndDay" data-desc="Nikmatilah glutathione sumbangan Abang Long & Kak Aliyah!">
-		            <img src="img/0108/0108036.jpeg" class="clickable-img" title="Evening Activities" alt="2ndDay" data-desc="Menikmati glutathione">
-                    <img src="img/0108/0108026.jpeg" class="clickable-img" title="Evening Activities" alt="2ndDay" data-desc="Dam haji sambil tunggu turn glutathione">
-		            <img src="img/0108/0108029.jpeg" class="clickable-img" title="Evening Activities" alt="2ndDay" data-desc="Dam haji standoff!">
-                    <img src="img/0108/0108025.jpeg" class="clickable-img" title="Evening Activities" alt="2ndDay" data-desc="Most intense dam haji battle">
-
-		    
-                    <div class="video-container clickable-vid" data-video="img/0108/0108102v.mp4" data-desc="12-9">
-                        <video src="img/0108/0108102v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    
-                    <div class="video-container clickable-vid" data-video="img/0108/0108101v.mp4" data-desc="Culin the coach">
-                        <video src="img/0108/0108101v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0108/0108136v.mp4" data-desc="More handball footage">
-                        <video src="img/0108/0108136v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0108/0108117v.mp4" data-desc="Lompat laju-laju!!">
-                        <video src="img/0108/0108117v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    
-                    <div class="video-container clickable-vid" data-video="img/0108/0108103v.mp4" data-desc="10-8">
-                        <video src="img/0108/0108103v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0108/0108106v.mp4" data-desc="Handball resumes...">
-                        <video src="img/0108/0108106v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-		            <div class="video-container clickable-vid" data-video="img/0108/0108104v.mp4" data-desc="Skor 8-9">
-                        <video src="img/0108/0108104v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0108/0108105v.mp4" data-desc="Handball activities">
-                        <video src="img/0108/0108105v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-
-                </div>
-                <div class="column">
-                    <div class="video-container clickable-vid" data-video="img/0108/0108110v.mp4" data-desc="3rd match">
-                        <video src="img/0108/0108110v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0108/0108114v.mp4" data-desc="Seri9 vs Seastars ✨">
-                        <video src="img/0108/0108114v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-		            <div class="video-container clickable-vid" data-video="img/0108/0108109v.mp4" data-desc="2nd match">
-                        <video src="img/0108/0108109v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0108/0108113v.mp4" data-desc="sengit sengit">
-                        <video src="img/0108/0108113v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-			        <div class="video-container clickable-vid" data-video="img/0108/0108100v.mp4" data-desc="Sedang berlangsung~">
-                        <video src="img/0108/0108100v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0108/0108112v.mp4" data-desc="half time showww">
-                        <video src="img/0108/0108112v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0108/0108116v.mp4" data-desc="Soraya vs ainie">
-                        <video src="img/0108/0108116v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-		                <div class="video-container clickable-vid" data-video="img/0108/0108111v.mp4" data-desc="sengit">
-                        <video src="img/0108/0108111v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0108/0108115v.mp4" data-desc="Wooo culin vs aini">
-                        <video src="img/0108/0108115v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <img src="img/0108/0108098.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108055.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108061.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108066.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108073.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108081.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108087.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108095.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-		            <img src="img/0108/0108068.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108050.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108056.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108062.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108067.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108076.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108093.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-			        <img src="img/0108/0108035.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108097.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108053.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108058.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108065.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108071.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108078.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108084.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108091.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-		            <img src="img/0108/0108034.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108048.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108051.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108057.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108063.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108069.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108077.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108089.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108092.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Gift exchange!!">
-                    <img src="img/0108/0108124.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Picture of Everyone!!">
-                    <img src="img/0108/0108125.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Picture of Everyone!!">
-                    <img src="img/0108/0108134.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Picture of Everyone!!">
-                    <img src="img/0108/0108121.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Picture of Everyone!!">
-                    <img src="img/0108/0108126.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Picture of Everyone!!">
-                    <img src="img/0108/0108130.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Picture of Everyone!!">
-                    <img src="img/0108/0108128.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Picture of Everyone!!">
-                    <img src="img/0108/0108131.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Picture of Everyone!!">
-                    <img src="img/0108/0108119.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Picture of Everyone!!">
-                    <img src="img/0108/0108120.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Picture of Everyone!!">
-                    <img src="img/0108/0108127.jpeg" class="clickable-img" title="Night activities" alt="2ndDay" data-desc="Picture of Everyone!!">
-                    <div class="video-container clickable-vid" data-video="img/0108/0108135v.mp4" data-desc="Video of Everyone!!!">
-                        <video src="img/0108/0108135v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-
-                </div>
-            </div>
-
-            <hr>
-
-            <h2>2ND AUGUST 2026</h2>
-            <h5><i>3rd Day</i></h5>
-            
-            <div class="row">
-                <div class="column">
-                    <img src="img/0208/0208001.jpeg" class="clickable-img" title="Breakky" alt="3rdDay" data-desc="Menikmati breakfast on last day!!">
-                    <img src="img/0208/0208002.jpeg" class="clickable-img" title="Breakfast food" alt="3rdDay" data-desc="Karipap dan donut sarapan">
-                    <img src="img/0208/0208004.jpeg" class="clickable-img" title="Coloring contest" alt="3rdDay" data-desc="Pertandingan mewarna untuk kanak-kanak!!">
-                    <div class="video-container clickable-vid" data-video="img/0208/0208017v.mp4" data-desc="Suasana mewarna">
-                        <video src="img/0208/0208017v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-
-                </div>
-                <div class="column">
-                    <div class="video-container clickable-vid" data-video="img/0208/0208019v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208019v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208020v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208020v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208021v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208021v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208022v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208022v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208028v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208028v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208029v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208029v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208030v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208030v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208016v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208016v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208031v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208031v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208032v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208032v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208033v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208033v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208034v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208034v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208035v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208035v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208036v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208036v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208037v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208037v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208038v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208038v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208039v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208039v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208040v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208040v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208041v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208041v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208042v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208042v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208043v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208043v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208044v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208044v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208045v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208045v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208046v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208046v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208047v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208047v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208048v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208048v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208049v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208049v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208050v.mp4" data-desc="Badminton clips">
-                        <video src="img/0208/0208050v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208018v.mp4" data-desc="ni baru WeFamFit">
-                        <video src="img/0208/0208018v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div> 
-
-                </div>
-                <div class="column">
-			        <img src="img/0208/0208007.jpeg" class="clickable-img" title="Suasana Majlis Penutup" alt="3rdDay" data-desc="Doa penutup">
-                    <img src="img/0208/0208014.jpeg" class="clickable-img" title="Suasana Majlis Penutup 1" alt="3rdDay" data-desc="Closing ceremonyyy pt 1">
-                    <img src="img/0208/0208015.jpeg" class="clickable-img" title="Suasana Majlis Penutup 2" alt="3rdDay" data-desc="Closing ceremonyyy pt 2">
-
-                    <div class="video-container clickable-vid" data-video="img/0208/0208051v.mp4" data-desc="kak Ainie and Taqi">
-                        <video src="img/0208/0208051v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208055v.mp4" data-desc="Mummy Sufi's smiley speech">
-                        <video src="img/0208/0208055v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208059v.mp4" data-desc="Aunty Tasha's simple speech">
-                        <video src="img/0208/0208059v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208027v.mp4" data-desc="Mamajue's emotional speech">
-                        <video src="img/0208/0208027v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208054v.mp4" data-desc="Mummy Psah's hopeful speech">
-                        <video src="img/0208/0208054v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208058v.mp4" data-desc="Babah's laidback speech">
-                        <video src="img/0208/0208058v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    
-                    <div class="video-container clickable-vid" data-video="img/0208/0208052v.mp4" data-desc="Harris's speech">
-                        <video src="img/0208/0208052v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <img src="img/0208/0208006.jpeg" class="clickable-img" title="Chef Ana masak maggi for all" alt="3rdDay" data-desc="Chef Eiman tengah off day, so Chef Ana take over masak maggi!">
-                    <div class="video-container clickable-vid" data-video="img/0208/0208053v.mp4" data-desc="Mamajue's heartfelt speech 2nd POV">
-                        <video src="img/0208/0208053v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208057v.mp4" data-desc="Culin's enthusiastic speech">
-                        <video src="img/0208/0208057v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208061v.mp4" data-desc="Kak Ainie's speech">
-                        <video src="img/0208/0208061v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208056v.mp4" data-desc="Abang Long's speech">
-                        <video src="img/0208/0208056v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <div class="video-container clickable-vid" data-video="img/0208/0208060v.mp4" data-desc="Ummi's tearjerking speech">
-                        <video src="img/0208/0208060v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-		            <div class="video-container clickable-vid" data-video="img/0208/0208026v.mp4" data-desc="The winerrrrrr of all 🏆🥇">
-                        <video src="img/0208/0208026v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-
-                </div>
-                <div class="column">
-                    <div class="video-container clickable-vid" data-video="img/0208/0208025v.mp4" data-desc="Bye semuaaaa">
-                        <video src="img/0208/0208025v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <img src="img/0208/0208008.jpeg" class="clickable-img" title="Balik journey" alt="3rdDay" data-desc="Culin & fam otw balikk">
-                    <img src="img/0208/0208009.jpeg" class="clickable-img" title="Abang Long & fam otw balik" alt="3rdDay" data-desc="Tgh dinner dulu sebelom balik kluang">
-                    <div class="video-container clickable-vid" data-video="img/0208/0208024v.mp4" data-desc="Rasanya kalau ada pertandingnan panjat pokok kelapa pon, sure dia menang">
-                        <video src="img/0208/0208024v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <img src="img/0208/0208010.jpeg" class="clickable-img" title="Display Trophy" alt="3rdDay" data-desc="kena letak kat luar dalam 3 atau 4 hari<br>kalau tak jiran jiran tak tau kami menang">
-                    <img src="img/0208/0208012.jpeg" class="clickable-img" title="Uncle Iyeh smpai rumahh" alt="3rdDay" data-desc="Home sweet home 🏠❤️">
-                    <div class="video-container clickable-vid" data-video="img/0208/0208023v.mp4" data-desc="Tak dapat hanper no 1, tapi boleh makan hamper no 1 😊">
-                        <video src="img/0208/0208023v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <img src="img/0208/0208011.jpeg" class="clickable-img" title="Display Trophy" alt="3rdDay" data-desc="kita papar sini">
-
-                </div>
-            </div>
-        </section>
-
-        <!-- SUPER HEADER: UNCLE IYEH'S BIRTHDAY DINNER -->
-        <section class="super-header-group">
-            <div class="center-content">
-                <h1 style="text-transform: uppercase; letter-spacing: 2px;">🎂 Uncle Iyeh's Birthday Dinner 🎂</h1>
-                <h5><i>6th August 2026</i></h5>
-            </div>
-            
-            <div class="row">
-                <!-- Column 1 -->
-                <div class="column">
-                    <img src="img/0608/0608013.jpeg" class="clickable-img" title="Mamajue sampai awal" alt="Dinner1" data-desc="Kita ada 3 long table">
-                    <img src="img/0608/0608012.jpeg" class="clickable-img" title="The 3 long tables" alt="Dinner5" data-desc="Semua menikmati makanan Arab di meja masing-masing">
-                    <div class="video-container clickable-vid" data-video="img/0608/0608027v.mp4" data-desc="Happy bday Uncle Iyeh!! hihihi">
-                        <video src="img/0608/0608027v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <img src="img/0608/0608005.jpeg" class="clickable-img" title="More ladies joined in" alt="Dinner5" data-desc="Then along came Mummy Psah, Mummy Sufi, and Aunty Tasha">
-
-                </div>
-
-                <!-- Column 2 -->
-                <div class="column">
-                    <img src="img/0608/0608014.jpeg" class="clickable-img" title="Papazul menunggu" alt="Dinner2" data-desc="Lapar menunggu">
-                    <img src="img/0608/0608021.jpeg" class="clickable-img" title="Zahein & Piqa" alt="Dinner6" data-desc="Meja sepupu (ft. Zahein & Piqa)">
-                    <img src="img/0608/0608018.jpeg" class="clickable-img" title="Askew--" alt="Dinner5" data-desc="Happily askewed :)">
-                    <img src="img/0608/0608015.jpeg" class="clickable-img" title="Everyone is heree" alt="Dinner6" data-desc="Alas, everyone is here!">
-                    
-                </div>  
-
-                <!-- Column 3 -->
-                <div class="column">
-                    <img src="img/0608/0608010.jpeg" class="clickable-img" title="Ketibaan family Abang Wan & Kak Ainie" alt="Dinner3" data-desc="Suasana menjamu selera!">
-                    <img src="img/0608/0608020.jpeg" class="clickable-img" title="Long table 3" alt="Dinner7" data-desc="Para sepupu sedang menuggu ketibaan semua makanan">
-                    <img src="img/0608/0608007.jpeg" class="clickable-img" title="3 beautiful ladies" alt="Dinner5" data-desc="Left to right: Culin, Ummi, Dameya">
-                    <div class="video-container clickable-vid" data-video="img/0608/0608026v.mp4" data-desc="Order je lagi kalau nak :)">
-                        <video src="img/0608/0608026v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <img src="img/0608/0608017.jpeg" class="clickable-img" title="Semua berlari" alt="Dinner5" data-desc="Semua bergerak ke kamera">
-
-                </div>
-
-                <!-- Column 4 -->
-                <div class="column">
-                    <img src="img/0608/0608011.jpeg" class="clickable-img" title="Long table 1 feasting" alt="Dinner4" data-desc="Meja 1 menjamu selera">
-                    <img src="img/0608/0608022.jpeg" class="clickable-img" title="Waiter serving food" alt="Dinner5" data-desc="Tung Tung Tung, food is here.">
-                    <img src="img/0608/0608016.jpeg" class="clickable-img" title="The 4 ladies" alt="Dinner4" data-desc="Mamajue joins the group photo.">
-                    <div class="video-container clickable-vid" data-video="img/0608/0608024v.mp4" data-desc="1, 2, 3, wooooo!!">
-                        <video src="img/0608/0608024v.mp4#t=0.5" preload="metadata"></video>
-                        <div class="play-icon">&#9658;</div>
-                    </div>
-                    <img src="img/0608/0608023.jpeg" class="clickable-img" title="You think it's ald over?" alt="Dinner6" data-desc="Kami Masih bertahan 😅😅😅">
-
-                </div>
-            </div>
-        </section>
-
-        <!-- SUPER HEADER: PICKLEBALL SESSION -->
-        <section class="super-header-group">
-            <div class="center-content">
-                <h1 style="text-transform: uppercase; letter-spacing: 2px;">🏓 Pickleball Session 🏓</h1>
-                <h5><i>8th August 2026</i></h5>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <img src="img/0808/0808001.jpeg" class="clickable-img" title="Pickleball 001" alt="Pickleball1" data-desc="Serve with Purpose, Play with Passion">
-                </div>
-                <div class="column">
-                    <img src="img/0808/0808002.jpeg" class="clickable-img" title="Pickleball 002" alt="Pickleball2" data-desc="Jempol!!">
-                </div>
-                <div class="column">
-                    <img src="img/0808/0808003.jpeg" class="clickable-img" title="Pickleball 003" alt="Pickleball3" data-desc="Tadaa!!">
-                </div>
-                <div class="column">
-                    <!-- Column 4 placeholder for structure balance -->
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <div class="header">Diana's Contact Info</div>
-            <div class="contact-info">
-                <p>
-                    <a href="https://wa.me/qr/5VB2JZD7P3XGK1" target="_blank" rel="noopener">WhatsApp</a> || 
-                    <a href="https://t.me/dyezhoul" target="_blank" rel="noopener">Telegram</a> || 
-                    <a href="mailto:diana.zulkifli.2004@gmail.com">Email</a>
-                </p>
-            </div>
-            <p>&copy; 2026 Kunni Clan.</p>
-        </footer>
-
-        <!-- MODAL -->
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">X</span>
-                <img id="modal-img" src="" alt="">
-                <p id="modal-desc"></p>
             </div>
         </div>
-    </body>
+    </div>
+    <div id="attribution">
+        Protected by <a href="https://pagecrypt.lupine.dev/">PageCrypt</a>
+    </div>
+    <script>
+    (function() {
+
+        var pl = "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";
+        
+        var submitPass = document.getElementById('submitPass');
+        var passEl = document.getElementById('pass');
+        var invalidPassEl = document.getElementById('invalidPass');
+        var trycatcherror = document.getElementById('trycatcherror');
+        var successEl = document.getElementById('success');
+        var contentFrame = document.getElementById('contentFrame');
+        
+        // Sanity checks
+
+        if (pl === "") {
+            submitPass.disabled = true;
+            passEl.disabled = true;
+            alert("This page is meant to be used with the encryption tool. It doesn't work standalone.");
+            return;
+        }
+
+        if (!isSecureContext) {
+            document.querySelector("#passArea").style.display = "none";
+            document.querySelector("#securecontext").style.display = "block";
+            return;
+        }
+
+        if (!crypto.subtle) {
+            document.querySelector("#passArea").style.display = "none";
+            document.querySelector("#nocrypto").style.display = "block";
+            return;
+        }
+        
+        function str2ab(str) {
+            var ustr = atob(str);
+            var buf = new ArrayBuffer(ustr.length);
+            var bufView = new Uint8Array(buf);
+            for (var i=0, strLen=ustr.length; i < strLen; i++) {
+                bufView[i] = ustr.charCodeAt(i);
+            }
+            return bufView;
+        }
+
+        async function deriveKey(salt, password) {
+            const encoder = new TextEncoder()
+            const baseKey = await crypto.subtle.importKey(
+                'raw',
+                encoder.encode(password),
+                'PBKDF2',
+                false,
+                ['deriveKey'],
+            )
+            return await crypto.subtle.deriveKey(
+                { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
+                baseKey,
+                { name: 'AES-GCM', length: 256 },
+                true,
+                ['decrypt'],
+            )
+        }
+        
+        async function doSubmit(evt) {
+            submitPass.disabled = true;
+            passEl.disabled = true;
+
+            let iv, ciphertext, key;
+            
+            try {
+                var unencodedPl = str2ab(pl);
+
+                const salt = unencodedPl.slice(0, 32)
+                iv = unencodedPl.slice(32, 32 + 16)
+                ciphertext = unencodedPl.slice(32 + 16)
+
+                key = await deriveKey(salt, passEl.value);
+            } catch (e) {
+                trycatcherror.style.display = "inline";
+                console.error(e);
+                return;
+            }
+
+            try {
+                const decryptedArray = new Uint8Array(
+                    await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext)
+                );
+
+                let decrypted = new TextDecoder().decode(decryptedArray);
+
+                if (decrypted === "") throw "No data returned";
+
+                const basestr = '<base href="." target="_top">';
+                const anchorfixstr = `
+                    <script>
+                        Array.from(document.links).forEach((anchor) => {
+                            const href = anchor.getAttribute("href");
+                            if (href.startsWith("#")) {
+                                anchor.addEventListener("click", function(e) {
+                                    e.preventDefault();
+                                    const targetId = this.getAttribute("href").substring(1);
+                                    const targetEl = document.getElementById(targetId);
+                                    targetEl.scrollIntoView();
+                                });
+                            }
+                        });
+                    <\/script>
+                `;
+                
+                // Set default iframe link targets to _top so all links break out of the iframe
+                if (decrypted.includes("<head>")) decrypted = decrypted.replace("<head>", "<head>" + basestr);
+                else if (decrypted.includes("<!DOCTYPE html>")) decrypted = decrypted.replace("<!DOCTYPE html>", "<!DOCTYPE html>" + basestr);
+                else decrypted = basestr + decrypted;
+
+                // Fix fragment links
+                if (decrypted.includes("</body>")) decrypted = decrypted.replace("</body>", anchorfixstr + '</body>');
+                else if (decrypted.includes("</html>")) decrypted = decrypted.replace("</html>", anchorfixstr + '</html>');
+                else decrypted = decrypted + anchorfixstr;
+                
+                contentFrame.srcdoc = decrypted;
+                
+                successEl.style.display = "inline";
+                setTimeout(function() {
+                    dialogWrap.style.display = "none";
+                }, 1000);
+            } catch (e) {
+                invalidPassEl.style.display = "inline";
+                passEl.value = "";
+                submitPass.disabled = false;
+                passEl.disabled = false;
+                console.error(e);
+                return;
+            }
+        }
+        
+        submitPass.onclick = doSubmit;
+        passEl.onkeypress = function(e){
+            if (!e) e = window.event;
+            var keyCode = e.keyCode || e.which;
+            invalidPassEl.style.display = "none";
+            if (keyCode == '13'){
+              // Enter pressed
+              doSubmit();
+              return false;
+            }
+        }
+    })();
+    </script>
+  </body>
 </html>

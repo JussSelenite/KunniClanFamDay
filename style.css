@@ -239,7 +239,7 @@ p, .modal-content p, .center-content {
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-    color: #ffffff;
+    color: #00472c;
     background-color: var(--main-color);
     width: 32px;
     height: 32px;
@@ -254,7 +254,7 @@ p, .modal-content p, .center-content {
 
 .close:hover {
     background-color: var(--subtitle-color);
-    color: #ffffff;
+    color: #00472c;
 }
 
 @keyframes popup {

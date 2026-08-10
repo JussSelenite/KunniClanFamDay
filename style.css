@@ -318,9 +318,22 @@ footer p {
 }
 
 @media screen and (max-width: 600px) {
+    /* Break columns out of their groups so all thumbnails flow as
+       one continuous stream and wrap evenly into rows of 3 */
     .column {
-        flex: 33.33%;
+        display: contents;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .column img,
+    .video-container {
+        flex: 0 0 33.33%;
         max-width: 33.33%;
+        padding: 0 4px;
     }
 
     body {

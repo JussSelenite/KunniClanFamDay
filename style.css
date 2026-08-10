@@ -387,3 +387,31 @@ footer p {
     margin-bottom: 15px;
     outline: none;
 }
+
+/* Force all gallery images and video containers into a uniform 1:1 square */
+.clickable-img, 
+.video-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;    /* Enforces square dimensions */
+  object-fit: cover;       /* Crops excess neatly to fill the square without stretching */
+  border-radius: 8px;      /* Optional: subtle rounded corners */
+  overflow: hidden;        /* Keeps videos and images contained within the square */
+}
+
+/* Ensure raw <video> tags inside video-container fill the square */
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ensure the full, uncropped picture shows inside the Modal when clicked */
+.modal-content img,
+#modal-img {
+  width: auto;
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;     /* Displays the full original photo aspect ratio */
+  margin: auto;
+  display: block;
+}

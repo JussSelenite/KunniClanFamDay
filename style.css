@@ -1,254 +1,42 @@
-/* =========================
-   COLOR PALETTE & FONTS
-========================= */
-
-* {
-    box-sizing: border-box;
-}
-
-:root {
-    /* Color Palette */
-    --main-color: #026052;        /* Given Theme Color */
-    --bg-color: #f2f8f6;          /* Soft Mint Background */
-    --card-bg: #ffffff;          /* White Card BG */
-    --footer-bg: #dbebe7;        /* Soft Teal Footer */
-    
-    /* Accents */
-    --accent-coral: #e07a5f;     /* Coral for Highlights */
-    --accent-amber: #f4a261;     /* Amber Text Shadow */
-    --border-color: #a3c6c0;     /* Muted Sage Border */
-    
-    /* Clean, Web-Safe System Fonts (Comic Sans strictly forbidden) */
-    --font-heading: 'Trebuchet MS', 'Arial Rounded MT Bold', 'Arial Black', sans-serif;
-    --font-body: 'Verdana', 'Segoe UI', Tahoma, sans-serif;
-}
-
-/* =========================
-   BODY & TYPOGRAPHY
-========================= */
-
+/* GLOBAL & HEADER STYLES */
 body {
-    margin: 2%;
-    font-family: var(--font-body);
-    color: var(--main-color);
-    background-color: var(--bg-color);
-    font-size: 18px;
-    line-height: 1.4;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
 }
 
-h1 {
-    font-family: var(--font-heading);
-    color: var(--main-color);
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-    color: var(--main-color);
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 4px;
-}
-
-h5 {
-    font-family: var(--font-body);
-    font-size: 1.2rem;
-    color: var(--accent-coral);
-    margin-top: 0;
-}
-
-hr {
-    border: none;
-    border-top: 2px solid var(--border-color);
-}
-
-.header {
+.header, .center-content {
     text-align: center;
-    padding: 32px 16px;
+    margin-bottom: 20px;
 }
 
-.center-content {
-    text-align: center;
-    font-family: var(--font-body);
-    color: var(--main-color);
+.section-banner {
+    max-width: 100%;
+    height: auto;
 }
-
-/* =========================
-   SUPER HEADER GROUP
-========================= */
 
 .super-header-group {
-    background-color: #e4f0ed;
-    padding: 24px 16px;
-    border-radius: 16px;
-    border: 2px dashed var(--main-color);
-    margin-bottom: 24px;
+    margin-bottom: 40px;
 }
 
-.super-header-group h1 {
-    color: var(--main-color);
-    text-shadow: 1px 1px 0px var(--accent-amber);
-}
-
-/* =========================
-   GALLERY LAYOUT
-========================= */
-
+/* COLUMN GRID SYSTEM */
 .row {
     display: flex;
     flex-wrap: wrap;
     padding: 0 4px;
+    margin-bottom: 20px;
 }
 
 .column {
     flex: 25%;
     max-width: 25%;
     padding: 0 4px;
+    box-sizing: border-box;
 }
 
-.column img {
-    width: 100%;
-    margin-top: 8px;
-    cursor: pointer;
-    vertical-align: middle;
-    border: 3px solid var(--border-color);
-    border-radius: 10px;
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease,
-                border-color 0.2s ease;
-    box-shadow: 0 4px 8px rgba(2, 96, 82, 0.12);
-}
-
-.column img:hover {
-    transform: scale(1.03);
-    border-color: var(--accent-coral);
-    box-shadow: 0 8px 16px rgba(224, 122, 95, 0.25);
-}
-
-.clickable-img:active {
-    transform: scale(0.98);
-}
-
-/* =========================
-   MODAL
-========================= */
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    inset: 0;
-    background-color: rgba(2, 96, 82, 0.75);
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-}
-
-.modal-content {
-    background-color: var(--card-bg);
-    width: 100%;
-    max-width: 520px;
-    max-height: 90vh;
-    overflow-y: auto;
-    border-radius: 16px;
-    border: 4px solid var(--main-color);
-    padding: 20px;
-    position: relative;
-    animation: popup 0.2s ease;
-}
-
-.modal-content img {
-    width: 100%;
-    height: auto;
-    max-height: 65vh;
-    object-fit: contain;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.modal-content p {
-    font-family: var(--font-body);
-    font-size: 20px;
-    line-height: 1.4;
-    color: var(--main-color);
-    margin: 0;
-}
-
-.close {
-    position: absolute;
-    top: 8px;
-    right: 15px;
-    font-size: 32px;
-    font-weight: bold;
-    cursor: pointer;
-    color: var(--main-color);
-}
-
-.close:hover {
-    color: var(--accent-coral);
-}
-
-@keyframes popup {
-    from {
-        transform: scale(0.95);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    text-align: center;
-    padding: 24px;
-    margin-top: 40px;
-    background-color: var(--footer-bg);
-    border-top: 3px solid var(--main-color);
-    border-radius: 12px 12px 0 0;
-}
-
-.contact-info {
-    margin: 15px 0;
-}
-
-.contact-info a {
-    color: var(--main-color);
-    font-family: var(--font-body);
-    font-size: 1.1rem;
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.contact-info a:hover {
-    background-color: var(--main-color);
-    color: #ffffff;
-}
-
-footer hr {
-    border-color: var(--main-color);
-    width: 50%;
-    margin: 20px auto;
-}
-
-footer p {
-    font-family: var(--font-body);
-    font-size: 1rem;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
+/* Responsive adjustments for smaller screens */
 @media screen and (max-width: 800px) {
     .column {
         flex: 50%;
@@ -256,162 +44,138 @@ footer p {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
     .column {
         flex: 100%;
         max-width: 100%;
     }
-
-    body {
-        font-size: 16px;
-    }
-
-    footer {
-        padding: 15px 10px;
-    }
-
-    .contact-info {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    footer hr {
-        width: 80%;
-    }
-
-    .modal-content p {
-        font-size: 16px;
-    }
 }
 
-@media screen and (orientation: landscape) and (max-height: 500px) {
-    .modal-content {
-        max-width: 90%;
-        max-height: 85vh;
-        display: flex;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .modal-content img {
-        width: 45%;
-        max-height: 70vh;
-        margin-bottom: 0;
-    }
-
-    .modal-content p {
-        width: 55%;
-        font-size: 16px;
-        text-align: left;
-    }
-}
-
-.section-banner {
-    max-width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 8px; /* Optional: rounds the banner corners slightly */
-}
-
-/* =========================
-   AUTO-THUMBNAIL VIDEO STYLING
-========================= */
-
-.video-container {
-    position: relative;
-    cursor: pointer;
+/* 1:1 SQUARE GALLERY THUMBNAILS (Images & Videos) */
+.row .clickable-img, 
+.row .video-container {
+    width: 100%;
+    aspect-ratio: 1 / 1 !important;  /* Forces square only in grid */
+    object-fit: cover;               /* Crops thumbnail neatly without distortion */
+    border-radius: 8px;
     margin-top: 8px;
-    display: block;
-    width: 100%;
-    border: 3px solid var(--border-color);
-    border-radius: 10px;
+    cursor: pointer;
     overflow: hidden;
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 8px rgba(2, 96, 82, 0.12);
+    position: relative;
+    
+    /* Hardware acceleration & backface fixes to prevent hover flicker */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.video-container:hover {
-    transform: scale(1.03);
-    border-color: var(--accent-coral);
-    box-shadow: 0 8px 16px rgba(224, 122, 95, 0.25);
+/* Hover effect on grid items */
+.row .clickable-img:hover, 
+.row .video-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.video-container * {
-  pointer-events: none;
-}
-
-/* Style the auto-thumbnail video element to act like a photo */
-.video-container video {
+/* VIDEO CONTAINER & FLICKER PREVENTION */
+.row .video-container video {
     width: 100%;
-    height: auto;
-    display: block;
-    pointer-events: none; /* Disables right-click and controls on thumbnail */
+    height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-/* Play Button Circle & Triangle */
+/* Prevent overlay/icon from stealing pointer hover events (fixes flicker) */
+.video-container * {
+    pointer-events: none;
+}
+
 .play-icon {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(2, 96, 82, 0.85);
-    color: #ffffff;
+    font-size: 30px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 16px;
     border-radius: 50%;
+}
+
+/* MODAL POP-UP (UNCROPPED FULL MEDIA) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    padding-top: 40px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.85); 
+}
+
+.modal-content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    font-size: 20px;
-    padding-left: 4px;
-    border: 2px solid #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    justify-content: center;
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+    color: #fff;
 }
 
-.video-container:hover .play-icon {
-    transform: translate(-50%, -50%) scale(1.15);
-    background-color: var(--accent-coral);
-}
-
-/* Modal Video Styling */
+/* Reset image/video in modal to full uncropped original aspect ratio */
+#modal-img, 
 .modal-content video {
-    width: 100%;
-    max-height: 65vh;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    outline: none;
+    width: auto !important;
+    height: auto !important;
+    max-width: 90vw;
+    max-height: 80vh;
+    aspect-ratio: unset !important;  /* Removes 1:1 constraint */
+    object-fit: contain !important; /* Shows complete image without cropping */
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
 }
 
-/* Force all gallery images and video containers into a uniform 1:1 square */
-.clickable-img, 
-.video-container {
-  width: 100%;
-  aspect-ratio: 1 / 1;    /* Enforces square dimensions */
-  object-fit: cover;       /* Crops excess neatly to fill the square without stretching */
-  border-radius: 8px;      /* Optional: subtle rounded corners */
-  overflow: hidden;        /* Keeps videos and images contained within the square */
+#modal-desc {
+    margin-top: 15px;
+    font-size: 1.1rem;
 }
 
-/* Ensure raw <video> tags inside video-container fill the square */
-.video-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #f1f1f1;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* Ensure the full, uncropped picture shows inside the Modal when clicked */
-.modal-content img,
-#modal-img {
-  width: auto;
-  max-width: 90vw;
-  max-height: 85vh;
-  object-fit: contain;     /* Displays the full original photo aspect ratio */
-  margin: auto;
-  display: block;
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #ccc;
+}
+
+footer a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }

@@ -4,13 +4,13 @@
 }
 
 :root {
-    --main-color: #026052;
-    --bg-color: #f2f8f6;
-    --card-bg: #ffffff;
-    --footer-bg: #dbebe7;
-    --accent-coral: #e07a5f;
-    --accent-amber: #f4a261;
-    --border-color: #a3c6c0;
+    --main-color: #026052;        /* Title Font Color */
+    --subtitle-color: #b82427;    /* Description & Subtitle Color */
+    
+    --bg-color: #f2f8f6;          /* Soft Mint Background */
+    --card-bg: #ffffff;          /* White Card BG */
+    --footer-bg: #dbebe7;        /* Soft Teal Footer */
+    --border-color: #a3c6c0;     /* Muted Sage Border */
     
     --font-heading: 'Trebuchet MS', 'Arial Rounded MT Bold', 'Arial Black', sans-serif;
     --font-body: 'Verdana', 'Segoe UI', Tahoma, sans-serif;
@@ -44,7 +44,7 @@ h2 {
 h5 {
     font-family: var(--font-body);
     font-size: 1.2rem;
-    color: var(--accent-coral);
+    color: var(--subtitle-color);
     margin-top: 0;
 }
 
@@ -211,6 +211,10 @@ hr {
     line-height: 1.4;
     color: var(--main-color);
     margin: 0;
+}
+
+p, .modal-content p, .center-content {
+    color: var(--subtitle-color); /* #b82427 for Descriptions/Body Text */
 }
 
 .close {
